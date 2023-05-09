@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Ruby JobBoard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    <% if !user_signed_in?%>
+      <a class="nav-item nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/jobs">Jobs</a>
+      <a class="nav-item nav-link" href="/companies">Companies</a>
+      <a class="nav-item nav-link " href="users/sign_in">Sign_in</a>
+      <% else%>
+      <a class="nav-item nav-link" href="#">current_user.user_role <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/jobs">Jobs</a>
+      <a class="nav-item nav-link" href="/jobs/new">Create_Job</a>
+      <%end%>
+      <a class="nav-item nav-link" href="/companies">Companies</a>
+      <a class="nav-item nav-link"><%= link_to "Sign_Out", destroy_user_session_path, method: :delete %></a>
+
+          
+   </div>
+
+   </div>
+  </div>
+</nav>
